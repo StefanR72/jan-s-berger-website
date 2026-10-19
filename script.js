@@ -28,6 +28,7 @@ menuButton?.addEventListener('click', () => {
 navigation?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   navigation.classList.remove('open');
   menuButton?.setAttribute('aria-expanded', 'false');
+  menuButton?.setAttribute('aria-label', 'Menü öffnen');
 }));
 
 const bookDialog = document.querySelector('#book-dialog');
@@ -76,3 +77,14 @@ document.querySelectorAll('dialog').forEach(dialog => {
 });
 
 document.querySelector('#year').textContent = String(new Date().getFullYear());
+
+// Close the compact navigation with Escape or when returning to the desktop layout.
+function closeNavigation() {
+  navigation?.classList.remove('open');
+  menuButton?.setAttribute('aria-expanded', 'false');
+  menuButton?.setAttribute('aria-label', 'Menü öffnen');
+}
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && navigation?.classList.contains('open')) { closeNavigation(); menuButton?.focus(); }
+});
+window.matchMedia('(min-width: 1101px)').addEventListener('change', closeNavigation);
