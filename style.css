@@ -41,3 +41,14 @@ html{scroll-padding-top:24px}.header{height:76px;padding-inline:20px}.navigation
 }
 @media(max-width:360px){.brand{gap:9px}.brand-type{padding-left:9px}.brand-type strong{letter-spacing:1.5px}.hero h1{font-size:40px}.book-image{height:330px;padding:32px}.hero-bottom>div{max-width:60%}}
 @media(hover:none){.book-card:hover,.book-card:hover .book-image img,.btn:hover{transform:none}}
+
+/* Let the opening section grow with its copy at every viewport and zoom level. */
+.hero{height:auto;max-height:none;min-height:0;display:flex;flex-direction:column}
+.hero-inner{width:100%;height:auto;min-height:0;flex:1;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);padding-top:145px;padding-bottom:56px;gap:clamp(28px,4vw,65px)}
+.hero h1{font-size:clamp(44px,5.2vw,76px);letter-spacing:-2px;overflow-wrap:normal}
+.hero-feature{height:auto;min-height:420px}.hero-book{width:min(310px,78%)}
+.hero-footnote{margin-top:30px;line-height:1.8}.feature-tag{bottom:12%}
+.hero-bottom{position:relative;left:auto;right:auto;bottom:auto;flex-shrink:0;height:auto;min-height:60px;margin:0 clamp(22px,6vw,95px);padding:12px 0;gap:20px}
+.hero-bottom>div{line-height:1.6}.hero-bottom a{min-height:44px;flex-shrink:0}
+@media(min-width:701px) and (max-width:1100px){.hero-inner{padding:125px 32px 48px;gap:24px;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}.hero h1{font-size:clamp(42px,5.5vw,60px)}.hero-feature{min-height:390px}.hero-bottom{margin-inline:32px}.hero-actions .btn{font-size:10px;padding:17px;gap:12px}.hero-footnote{font-size:9px;letter-spacing:1px}}
+@media(max-width:700px){.hero-inner{display:flex;flex-direction:column;gap:20px;padding:112px 22px 30px}.hero h1{font-size:clamp(40px,10.7vw,64px);letter-spacing:-1.7px}.hero-feature{min-height:370px;height:auto}.hero-book{width:220px;max-width:70%}.hero-bottom{margin-inline:22px;gap:12px;font-size:8px}.hero-bottom>div{max-width:65%}.hero-actions .btn{flex:1 1 220px}.feature-tag{bottom:8%}}
