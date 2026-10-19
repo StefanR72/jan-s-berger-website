@@ -3,16 +3,25 @@
 const bookData = {
   1: {
     title: 'Das Telefon am Strand',
+    releaseDate: '2026-11-01',
+    releaseLabel: '1. November 2026',
+    sample: 'leseproben/telefon.html',
     subtitle: 'Band 1 der Hua-Hin-Trilogie',
     description: 'An einem Strand in Hua Hin wird ein Telefon gefunden. Was wie ein gewöhnlicher Fund beginnt, führt in eine Geschichte voller Rätsel, gefährlicher Geheimnisse und Entscheidungen, deren Folgen niemand abschätzen kann.'
   },
   2: {
     title: 'Nachtzug nach Bangkok',
+    releaseDate: '2026-12-01',
+    releaseLabel: '1. Dezember 2026',
+    sample: 'leseproben/nachtzug.html',
     subtitle: 'Band 2 der Hua-Hin-Trilogie',
     description: 'Die Spur führt weiter – bis in einen Nachtzug nach Bangkok. Dort wird die Reise zum gefährlichen Spiel, bei dem Vertrauen ein Risiko und die Wahrheit alles andere als sicher ist.'
   },
   3: {
     title: 'Das Haus hinter dem Wasser',
+    releaseDate: '2027-01-01',
+    releaseLabel: '1. Januar 2027',
+    sample: 'leseproben/wasser.html',
     subtitle: 'Band 3 · Finale der Hua-Hin-Trilogie',
     description: 'Im letzten Band der Trilogie laufen die Fäden zusammen. Alte Geheimnisse warten auf ihre Auflösung und die Vergangenheit holt jene ein, die glaubten, ihr entkommen zu sein.'
   }
@@ -41,6 +50,10 @@ document.querySelectorAll('[data-book]').forEach(button => {
     document.querySelector('#dialog-title').textContent = book.title;
     document.querySelector('#dialog-kicker').textContent = book.subtitle;
     document.querySelector('#dialog-description').textContent = book.description;
+    const release = document.querySelector('#dialog-release');
+    release.dateTime = book.releaseDate;
+    release.textContent = book.releaseLabel;
+    document.querySelector('#dialog-sample').href = book.sample;
     bookDialog.showModal();
   });
 });
