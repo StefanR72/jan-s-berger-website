@@ -42,6 +42,23 @@ navigation?.querySelectorAll('a').forEach(link => link.addEventListener('click',
 
 const bookDialog = document.querySelector('#book-dialog');
 const legalDialog = document.querySelector('#legal-dialog');
+const coverDialog = document.querySelector('#cover-dialog');
+
+document.querySelectorAll('[data-cover]').forEach(link => {
+  link.addEventListener('click', event => {
+    // Keep the image link available without JavaScript and for opening in a new tab.
+    if (!coverDialog || typeof coverDialog.showModal !== 'function' ||
+        event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    const title = link.querySelector('strong').textContent;
+    const image = document.querySelector('#cover-image');
+    image.src = link.href;
+    image.alt = `Buchcover: ${title} von Jan S. Berger`;
+    document.querySelector('#cover-title').textContent = title;
+    document.querySelector('#cover-original').href = link.href;
+    coverDialog.showModal();
+  });
+});
 
 document.querySelectorAll('[data-book]').forEach(button => {
   button.addEventListener('click', () => {

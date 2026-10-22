@@ -53,6 +53,29 @@ html{scroll-padding-top:24px}.header{height:76px;padding-inline:20px}.navigation
 @media(min-width:701px) and (max-width:1100px){.hero-inner{padding:125px 32px 48px;gap:24px;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}.hero h1{font-size:clamp(42px,5.5vw,60px)}.hero-feature{min-height:390px}.hero-bottom{margin-inline:32px}.hero-actions .btn{font-size:10px;padding:17px;gap:12px}.hero-footnote{font-size:9px;letter-spacing:1px}}
 @media(max-width:700px){.hero-inner{display:flex;flex-direction:column;gap:20px;padding:112px 22px 30px}.hero h1{font-size:clamp(40px,10.7vw,64px);letter-spacing:-1.7px}.hero-feature{min-height:370px;height:auto}.hero-book{width:220px;max-width:70%}.hero-bottom{margin-inline:22px;gap:12px;font-size:8px}.hero-bottom>div{max-width:65%}.hero-actions .btn{flex:1 1 220px}.feature-tag{bottom:8%}}
 
+/* Upcoming books: real cover links with a restrained line icon. */
+.coming-cover-link{grid-template-columns:24px minmax(0,1fr) auto;gap:18px;padding:24px 0;min-height:112px;transition:background .2s,border-color .2s}
+.coming-cover-link .coming-details{min-width:0;display:flex;flex-direction:column;gap:12px}
+.coming-cover-link strong{display:block;line-height:1.25;overflow-wrap:break-word}
+.coming-cover-link small{display:block;font-size:10px;line-height:1.6;letter-spacing:1px}
+.coming-item.coming-cover-link>.coming-cover-action{display:inline-flex;align-items:center;gap:12px;min-height:44px;color:#df957f;font:700 10px/1.5 var(--sans);letter-spacing:1.1px;text-transform:uppercase;white-space:nowrap}
+.coming-cover-action svg{flex-shrink:0;transition:transform .2s}
+.coming-cover-link:hover{background:rgba(255,255,255,.025);border-color:#bf6a54}
+.coming-cover-link:hover .coming-cover-action svg{transform:translate(2px,-2px)}
+.coming-cover-link:focus-visible{outline-offset:6px}
+.cover-dialog{width:min(640px,calc(100vw - 28px));max-width:640px;max-height:calc(100dvh - 28px);padding:28px;border:1px solid #505462;background:#141d2a;color:var(--ink);box-shadow:0 20px 100px #000b;overflow-y:auto;overscroll-behavior:contain}
+.cover-dialog::backdrop{background:rgba(0,0,0,.85);backdrop-filter:blur(7px)}
+.cover-dialog .dialog-close{top:10px;right:10px}
+.cover-dialog-header{padding-right:36px}
+.cover-dialog .section-kicker{font-size:9px;letter-spacing:1.8px;margin:0 0 10px;line-height:1.6}
+.cover-dialog h2{font:400 clamp(25px,4vw,34px)/1.2 var(--serif);margin:0 0 10px;overflow-wrap:break-word}
+.cover-dialog-header>p:last-child{font-size:12px;line-height:1.6;color:#b7bdc8;margin:0 0 20px}
+.cover-preview{margin:0;text-align:center;line-height:0}
+.cover-preview img{display:block;width:auto;max-width:100%;height:auto;max-height:calc(100dvh - 255px);object-fit:contain;margin:auto;box-shadow:0 12px 30px #0006}
+.cover-original-link{display:flex;justify-content:center;align-items:center;gap:12px;min-height:44px;margin-top:16px;color:#edb19c;font-size:12px;line-height:1.5;text-align:center}
+@media(max-width:700px){.coming-cover-link{grid-template-columns:22px minmax(0,1fr);gap:10px;padding:22px 0}.coming-cover-link .coming-number{grid-column:1;grid-row:1;align-self:start;padding-top:5px}.coming-cover-link .coming-details{grid-column:2;grid-row:1;gap:10px}.coming-item.coming-cover-link>.coming-cover-action{grid-column:2;grid-row:2;justify-self:start;font-size:10px;gap:10px}.coming-cover-link small{font-size:10px;grid-column:auto;grid-row:auto}.cover-dialog{padding:24px 20px}.cover-preview img{max-height:calc(100dvh - 260px)}}
+@media(prefers-reduced-motion:reduce){.coming-cover-link:hover .coming-cover-action svg{transform:none}}
+
 /* Book publication details and distraction-free chapter reading. */
 .book-info .book-release,.book-release{font-size:14px;line-height:1.6;color:#ebbaab;min-height:0;margin:8px 0 20px}
 .sample-link{width:100%;font-size:11px;line-height:1.6;gap:12px;margin:12px 0 18px;white-space:normal}.info-dialog .dialog-action{width:100%;font-size:10px;line-height:1.6;gap:10px}
