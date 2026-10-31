@@ -41,7 +41,6 @@ navigation?.querySelectorAll('a').forEach(link => link.addEventListener('click',
 }));
 
 const bookDialog = document.querySelector('#book-dialog');
-const legalDialog = document.querySelector('#legal-dialog');
 const coverDialog = document.querySelector('#cover-dialog');
 
 document.querySelectorAll('[data-cover]').forEach(link => {
@@ -72,27 +71,6 @@ document.querySelectorAll('[data-book]').forEach(button => {
     release.textContent = book.releaseLabel;
     document.querySelector('#dialog-sample').href = book.sample;
     bookDialog.showModal();
-  });
-});
-
-const legalTexts = {
-  impressum: {
-    title: 'Impressum',
-    text: 'Die vollständige Anbieterkennzeichnung mit den gesetzlich erforderlichen Kontakt- und Anschriftsangaben muss vor der öffentlichen Veröffentlichung dieser Website eingesetzt werden. Diese Vorschau enthält bewusst keine erfundenen Kontaktdaten.'
-  },
-  datenschutz: {
-    title: 'Datenschutz',
-    text: 'Diese statische Demo verwendet keine Analyse- oder Trackingdienste, keine Cookies und keine extern eingebundenen Schriftarten. Vor Veröffentlichung ist eine individuelle Datenschutzerklärung, insbesondere zu GitHub Pages und möglichen Kontaktmöglichkeiten, zu ergänzen.'
-  }
-};
-
-document.querySelectorAll('[data-legal]').forEach(button => {
-  button.addEventListener('click', () => {
-    const legal = legalTexts[button.dataset.legal];
-    if (!legal || !legalDialog) return;
-    document.querySelector('#legal-title').textContent = legal.title;
-    document.querySelector('#legal-text').textContent = legal.text;
-    legalDialog.showModal();
   });
 });
 
