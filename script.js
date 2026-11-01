@@ -6,6 +6,7 @@ const bookData = {
     releaseDate: '2026-11-01',
     releaseLabel: '1. November 2026',
     sample: 'leseproben/telefon.html',
+    amazon: 'https://amzn.eu/d/0iFCLvPs',
     subtitle: 'Band 1 der Hua-Hin-Trilogie',
     description: 'An einem Strand in Hua Hin wird ein Telefon gefunden. Was wie ein gewöhnlicher Fund beginnt, führt in eine Geschichte voller Rätsel, gefährlicher Geheimnisse und Entscheidungen, deren Folgen niemand abschätzen kann.'
   },
@@ -70,6 +71,10 @@ document.querySelectorAll('[data-book]').forEach(button => {
     release.dateTime = book.releaseDate;
     release.textContent = book.releaseLabel;
     document.querySelector('#dialog-sample').href = book.sample;
+    const purchase = document.querySelector('#dialog-purchase');
+    purchase.hidden = !book.amazon;
+    if (book.amazon) purchase.href = book.amazon;
+    else purchase.removeAttribute('href');
     bookDialog.showModal();
   });
 });
