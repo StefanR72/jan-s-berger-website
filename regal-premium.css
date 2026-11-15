@@ -90,7 +90,7 @@ padding:27px 19px 61px;margin-bottom:22px;scroll-snap-type:x mandatory;
 scroll-padding-inline:19px;scrollbar-color:#a87946 #22150f;scrollbar-width:thin;
 -webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain;
 }
-.shelf-page .shelf::after{left:0;right:0;bottom:19px;position:sticky;display:block;flex:0 0 0;height:0;box-shadow:none;border:0;content:""}
+.shelf-page .shelf::after{display:none}.shelf-page .shelf{background:linear-gradient(to bottom,transparent calc(100% - 51px),#bd8750 calc(100% - 51px),#704322 calc(100% - 45px),#3d230f calc(100% - 22px),#251208 calc(100% - 13px),transparent calc(100% - 13px)),radial-gradient(ellipse at 50% 0%,#e6aa641c,transparent 75%)}
 .shelf-page .shelf::before{top:8px}
 .shelf-page .book{flex:0 0 clamp(135px,43vw,165px);max-width:none;scroll-snap-align:center;align-self:flex-end}
 .shelf-page .book img{height:220px}
