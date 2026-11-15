@@ -12,9 +12,10 @@ const bookData = {
   },
   2: {
     title: 'Nachtzug nach Bangkok',
-    releaseDate: '2026-12-01',
-    releaseLabel: '1. Dezember 2026',
+    releaseDate: '2026-11-15',
+    releaseLabel: 'Jetzt erhältlich',
     sample: 'leseproben/nachtzug.html',
+    amazon: 'https://amzn.eu/d/00xBTkLs',
     subtitle: 'Band 2 der Hua-Hin-Trilogie',
     description: 'Die Spur führt weiter – bis in einen Nachtzug nach Bangkok. Dort wird die Reise zum gefährlichen Spiel, bei dem Vertrauen ein Risiko und die Wahrheit alles andere als sicher ist.'
   },
