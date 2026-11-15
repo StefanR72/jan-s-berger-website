@@ -21,8 +21,8 @@ const bookData = {
   },
   3: {
     title: 'Das Haus hinter dem Wasser',
-    releaseDate: '2027-01-01',
-    releaseLabel: '1. Januar 2027',
+    releaseDate: '2026-12-01',
+    releaseLabel: '1. Dezember 2026',
     sample: 'leseproben/wasser.html',
     subtitle: 'Band 3 · Finale der Hua-Hin-Trilogie',
     description: 'Im letzten Band der Trilogie laufen die Fäden zusammen. Alte Geheimnisse warten auf ihre Auflösung und die Vergangenheit holt jene ein, die glaubten, ihr entkommen zu sein.'
