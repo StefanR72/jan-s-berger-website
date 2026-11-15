@@ -59,3 +59,43 @@ box-shadow:inset 0 12px 22px -25px #ffd49a88}
 .shelf-teaser__covers:hover img:nth-child(2){transform:translateY(-26px) scale(1.05)}
 @media(max-width:760px){.shelf-page .cabinet{border-width:9px;padding-top:32px}.shelf-page .shelf{min-height:0;gap:19px 14px;padding:18px 5px 64px;margin-bottom:26px}.shelf-page .book{flex:0 1 calc(50% - 12px);max-width:162px}.shelf-page .book img{height:235px}.shelf-page .book-name{font-size:.93rem}.shelf-page .shelf-caption{font-size:1.3rem}.shelf-page dialog#detail .detail-layout{grid-template-columns:1fr;justify-items:center;padding:26px}.shelf-page dialog#detail .detail-cover{max-height:215px;width:auto}.shelf-page dialog#detail .detail-text{width:100%}.shelf-teaser__inner{grid-template-columns:1fr;gap:24px}.shelf-teaser__covers{order:-1;height:250px}.shelf-teaser__covers img{max-height:190px}.shelf-teaser{padding:55px 0}}
 @media(prefers-reduced-motion:reduce){.shelf-page .book,.shelf-page .book .cover,.shelf-teaser__covers img{transition:none!important}}
+
+/* Responsive shelf refinements · 2026-11-15 */
+.shelf-page .cabinet{max-width:1120px;margin-inline:auto}
+.shelf-page .shelf{align-content:end}
+.shelf-page .shelf-caption{padding-top:4px}
+.shelf-page .book-name{min-height:2.5em}
+.shelf-page .hero{padding-bottom:38px}
+.shelf-page .library-head{padding-top:12px}
+.shelf-page .book .cover img{aspect-ratio:810/1250;object-fit:contain}
+@media(min-width:761px){
+.shelf-page .shelf{flex-wrap:nowrap;gap:clamp(26px,5vw,75px)}
+.shelf-page .book{flex:0 1 190px}
+.shelf-page .hero{padding-top:65px}
+}
+@media(max-width:760px){
+.shelf-page .hero{padding:44px 17px 24px}
+.shelf-page .hero h1{font-size:clamp(3.1rem,12vw,4.8rem)}
+.shelf-page .hero p:last-child{font-size:.88rem;line-height:1.65}
+.shelf-page .library{padding:0 12px}
+.shelf-page .library-head{padding:12px 6px 18px;gap:7px}
+.shelf-page .library-head h2{font-size:1.9rem}
+.shelf-page .library-head p{font-size:.67rem;line-height:1.5}
+.shelf-page .cabinet{padding:23px 0 12px;border-width:8px}
+.shelf-page .shelf-caption{font-size:1.17rem;margin:0 13px 8px}
+.shelf-page .shelf{
+display:flex;flex-flow:row nowrap;justify-content:flex-start;align-items:flex-end;
+overflow-x:auto;overflow-y:hidden;gap:19px;min-height:340px;
+padding:27px 19px 61px;margin-bottom:22px;scroll-snap-type:x mandatory;
+scroll-padding-inline:19px;scrollbar-color:#a87946 #22150f;scrollbar-width:thin;
+-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain;
+}
+.shelf-page .shelf::after{left:0;right:0;bottom:19px;position:sticky;display:block;flex:0 0 0;height:0;box-shadow:none;border:0;content:""}
+.shelf-page .shelf::before{top:8px}
+.shelf-page .book{flex:0 0 clamp(135px,43vw,165px);max-width:none;scroll-snap-align:center;align-self:flex-end}
+.shelf-page .book img{height:220px}
+.shelf-page .book-name{min-height:2.3em;white-space:normal}
+.shelf-page .book-note{margin-bottom:5px}
+.shelf-page .status{font-size:.5rem}
+.shelf-page .cabinet::after{pointer-events:none}
+}
