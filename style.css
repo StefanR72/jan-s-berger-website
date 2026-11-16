@@ -99,3 +99,19 @@ html{scroll-padding-top:24px}.header{height:76px;padding-inline:20px}.navigation
 /* Purchase links use the established button style and remain separate from samples. */
 .book-purchase-link{width:100%;font-size:11px;line-height:1.6;gap:12px;padding:16px 18px;white-space:normal;margin:0 0 16px}
 #dialog-purchase[hidden]{display:none}
+
+/* Mobile fix: upcoming Kindle preorders must stay inside viewport. */
+.coming-item.coming-preorder-link{grid-template-columns:28px minmax(0,1fr) minmax(140px,auto) 20px;gap:14px;padding:22px 0}
+.coming-preorder-link .coming-details{min-width:0;display:flex;flex-direction:column;gap:8px}
+.coming-preorder-link .coming-details strong{overflow-wrap:anywhere;line-height:1.25}
+.coming-preorder-link .coming-details small{display:block;line-height:1.5}
+.coming-item.coming-preorder-link>.coming-cover-action{display:inline-flex;align-items:center;justify-content:flex-end;gap:12px;min-width:0;max-width:100%;color:#df957f;font:700 10px/1.5 var(--sans);letter-spacing:1.1px;text-transform:uppercase;white-space:normal}
+.coming-preorder-link .coming-cover-action svg{flex:0 0 20px}
+@media(max-width:700px){
+.coming-item.coming-preorder-link{width:100%;min-width:0;grid-template-columns:22px minmax(0,1fr);gap:8px 12px;align-items:start;padding:22px 0}
+.coming-item.coming-preorder-link>.coming-number{grid-column:1;grid-row:1;padding-top:6px}
+.coming-item.coming-preorder-link>.coming-details{grid-column:2;grid-row:1;min-width:0}
+.coming-item.coming-preorder-link>.coming-cover-action{grid-column:2;grid-row:2;justify-self:start;justify-content:flex-start;min-height:44px;gap:10px;margin-top:2px;max-width:100%;font-size:10px;line-height:1.5}
+.coming-preorder-link .coming-details small{grid-column:auto;grid-row:auto;overflow-wrap:break-word}
+.coming-preorder-link .coming-cover-action span{min-width:0;overflow-wrap:break-word}
+}
